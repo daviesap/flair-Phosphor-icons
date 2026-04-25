@@ -1,3 +1,11 @@
+return JSON.stringify({
+  name,
+  style,
+  color,
+  bgcolor,
+  scale
+});
+
 window.function = async function(name, style, color, bgcolor, scale) {
   // Get values or set defaults
   name = name.value || "image"; // Default icon name if none provided (without style suffix)
