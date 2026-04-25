@@ -10,7 +10,7 @@ window.function = async function(name, style, color, bgcolor, scale) {
   let filename = style === "regular" ? name : `${name}-${style}`;
 
   // Construct the URL to the SVG file
-  let svgUrl = `https://loqode.github.io/icons/assets/${style}/${filename}.svg`;
+let svgUrl = `https://daviesap.github.io/flair-Phosphor-icons/assets/${style}/${filename}.svg`;
 
   try {
     // Fetch the SVG file from the URL
