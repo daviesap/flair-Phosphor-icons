@@ -6,7 +6,7 @@
     "author": "Marco Volpato <marco@loqode.com>",
     "params": [
       {
-        "name": "nam",
+        "name": "name",
         "displayName": "Name (See phosphoricons.com)",
         "type": "string"
       },
