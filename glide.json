@@ -2,7 +2,7 @@
   {
     "kind": "column",
     "name": "Custom Icons",
-    "description": "Specify an icon name, style, color, background, and scale and it will return an SVG icon as a URL. If you want to level-up your Glide skills for free, head to https://loqode.com 🚀",
+    "description": "Specify an icon name, style, color, background, and scale and it will return an SVG icon as a URL.",
     "author": "Andrew Davies andrew@flair.london",
     "params": [
       {
