@@ -1,8 +1,8 @@
 [
   {
     "kind": "column",
-    "name": "Custom Icons",
-    "description": "Specify an icon name, style, color, background, and scale and it will return an SVG icon as a URL.  Andrew Davies, April 2026",
+    "name": "Phosphor Icons",
+    "description": "Specify an icon name, style, colour, background, and scale and it will return an SVG icon as a URL.  Andrew Davies, April 2026",
     "author": "Andrew Davies andrew@flair.london",
     "params": [
       {
@@ -17,12 +17,12 @@
       },
       {
         "name": "color",
-        "displayName": "Color",
+        "displayName": "Colour",
         "type": "string"
       },
       {
         "name": "bgcolor",
-        "displayName": "Background Color",
+        "displayName": "Background Colour",
         "type": "string"
       },
       {
