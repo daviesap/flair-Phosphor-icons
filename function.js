@@ -15,6 +15,10 @@ let svgUrl = `https://dev-icons.capcom.london/assets/${style}/${filename}.svg`;
   try {
     // Fetch the SVG file from the URL
     const response = await fetch(svgUrl);
+    if (!response.ok) {
+      return "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ij48L3N2Zz4=";
+    }
+
     let svgContent = await response.text();
 
     // Modify SVG content: set fill color, background color, and scale
