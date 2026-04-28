@@ -15,9 +15,6 @@ let svgUrl = `https://dev-icons.capcom.london/assets/${style}/${filename}.svg`;
   try {
     // Fetch the SVG file from the URL
     const response = await fetch(svgUrl);
-    if (!response.ok) {
-      return null; // Return null if no valid icon is found (e.g., 404)
-    }
     let svgContent = await response.text();
 
     // Modify SVG content: set fill color, background color, and scale
@@ -29,6 +26,6 @@ let svgUrl = `https://dev-icons.capcom.london/assets/${style}/${filename}.svg`;
     return svgDataUrl;
   } catch (error) {
     console.error('Failed to fetch or process the SVG:', error);
-    return null; // Return null on fetch/network errors as well
+    return ""; // Return empty on error
   }
 }
