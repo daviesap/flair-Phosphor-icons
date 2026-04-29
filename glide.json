@@ -2,7 +2,7 @@
   {
     "kind": "column",
     "name": "Phosphor Icons",
-    "description": "Specify an icon name, style, colour, background, and scale and it will return an SVG icon as a URL.  Andrew Davies, April 2026. Updated 28th April 2",
+    "description": "Specify an icon name, style, colour, background, and scale and it will return an SVG icon as a URL.  Andrew Davies, April 2026. Updated 28th April 3",
     "author": "Andrew Davies andrew@flair.london",
     "params": [
       {
