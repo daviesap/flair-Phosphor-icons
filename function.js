@@ -1,50 +1,47 @@
+const EMPTY_ICON = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==";
+
 window.function = async function(name, style, color, bgcolor, scale) {
   // Get values
-  name = name.value;
-  style = style.value || "";
+  name = name.value?.trim();
+  style = style.value || "regular";
   color = color.value || "black";
   bgcolor = bgcolor.value || "white";
   scale = scale.value || "64%";
 
-
-  // If no icon name provided → return nothing
-  if (!name || name.trim() === "") {
-    return "";
+  // If no icon name → return transparent icon (consistent)
+  if (!name) {
+    return EMPTY_ICON;
   }
 
-  // Determine the file name based on the style
-  let filename = style === "regular" ? name : `${name}-${style}`;
+  // Determine filename
+  const filename = style === "regular" ? name : `${name}-${style}`;
 
-  // Construct the URL to the SVG file
-  let svgUrl = `https://dev-icons.capcom.london/assets/${style}/${filename}.svg`;
+  // Build URL
+  const svgUrl = `https://dev-icons.capcom.london/assets/${style}/${filename}.svg`;
 
   try {
-    // Fetch the SVG file from the URL
     const response = await fetch(svgUrl);
 
-    // If icon not found → return nothing
+    // If icon not found → return transparent icon
     if (!response.ok) {
-      return "";
+      return EMPTY_ICON;
     }
 
     let svgContent = await response.text();
 
-    // Modify SVG content: set fill color
+    // Replace fill colour
     svgContent = svgContent.replace(/fill="[^"]*"/g, `fill="${color}"`);
 
-    // Add background and scale styling
+    // Add background + scale
     svgContent = svgContent.replace(
-      '<svg ',
+      "<svg ",
       `<svg style="background-color:${bgcolor}; transform: scale(${scale}); transform-origin: center;" `
     );
 
-    // Encode the modified SVG to a Data URL
-    let svgDataUrl = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
-
-    return svgDataUrl;
+    return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
 
   } catch (error) {
-    console.error('Failed to fetch or process the SVG:', error);
-    return ""; // Return nothing on error
+    console.error("Failed to fetch or process the SVG:", error);
+    return EMPTY_ICON;
   }
-}
+};
