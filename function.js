@@ -6,6 +6,12 @@ window.function = async function(name, style, color, bgcolor, scale) {
   bgcolor = bgcolor.value || "white";
   scale = scale.value || "64%";
 
+
+  // If no icon name provided → return nothing
+  if (!name || name.trim() === "") {
+    return "";
+  }
+
   // Determine the file name based on the style
   let filename = style === "regular" ? name : `${name}-${style}`;
 
