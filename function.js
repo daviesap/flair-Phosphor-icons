@@ -1,9 +1,9 @@
 window.function = async function(name, style, color, bgcolor, scale) {
   // Get values
   name = name.value;
-  style = style.value || "regular";
-  color = color.value || "transparent";
-  bgcolor = bgcolor.value || "transparent";
+  style = style.value || "";
+  color = color.value || "black";
+  bgcolor = bgcolor.value || "white";
   scale = scale.value || "64%";
 
   // If no icon name provided → return nothing
